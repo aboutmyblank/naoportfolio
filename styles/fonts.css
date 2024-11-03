@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Neureal-Regular';
+    src: url('../fonts/Neureal-Regular.woff2') format('woff2'),
+    url('../fonts/Neureal-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Neureal-Mono';
+    src: url('../fonts/NEUREAL-MONO.woff2') format('woff2'),
+    url('../fonts/NEUREAL-MONO.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} 

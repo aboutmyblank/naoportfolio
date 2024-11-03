@@ -1,0 +1,191 @@
+:root {
+    --clr-body: #000000;
+    --clr-titles: #000000 ;
+    --size-body: 0.8rem ;
+    --size-titles: 1rem ;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+* {
+    margin: 0;
+    line-height:calc(1em+0.5rem);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.contact,
+.textarea1,
+.textarea2,
+.education,
+.bio,
+.CV,
+.experience,
+.residencies,
+.work {
+  width: 100%;
+  height: 100%;
+  font-family: 'Neureal-Mono';
+  font-size: var(--size-body);
+  overflow: auto; /* Allow scroll if content exceeds */
+  padding: 10px;
+  box-sizing: border-box; /* Consistent sizing */
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+/*NAVBAR*/
+
+.name {
+  font-size: var(--size-body);
+    padding-top: 20px;
+    text-align: center;
+}
+.navbar ul {
+  font-size: var(--size-body);
+  list-style: none; /* Remove bullet points */
+    padding: 10px;
+    margin: 0;
+    display: flex; /* Align items in line */
+    gap: 10px; /* Add space between items */
+}
+.socials ul {
+  font-size: var(--size-body);
+    list-style: none; /* Remove bullet points */
+    padding: 10px;
+    margin: 0;
+    display: flex; /* Align items in line */
+    gap: 10px; /* Add space between items */
+    margin-top: -10px;
+}
+.socials {
+    position: relative;
+    top: -10px; /* Moves the socials section up */
+}
+
+.navbar ul li a,
+.socials ul li a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use inherited color */
+}
+
+/* Hide bio and CV sections initially */
+#bio,
+#CV {
+  display: none;
+}
+
+/*GRID*/
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1em repeat(10, 1fr);
+    grid-template-rows: repeat(4, 1em) repeat(5, 1fr);
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    justify-content: start;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1em repeat(10, 1fr);
+    grid-template-rows: auto; /* Adjust this if rows are too spaced */
+    gap: 5px;
+}
+
+.education,
+.work,
+.residencies
+.experience {
+    margin-top: 0; /* Remove any added space above */
+    padding-top: 0; /* Adjust padding if necessary */
+}
+
+.residencies {
+  margin-top: -5px; /* Adjust as needed */
+  position: relative;
+  overflow: hidden;
+}
+
+
+  .name { grid-area: 1 / 1 / 3 / 2; }
+  
+  .navbar { grid-area: 1 / 3 / 2 / 4; }
+  
+  .socials { grid-area: 2 / 3 / 3 / 4; }
+  
+  .bio {  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1em repeat(2, 1em 1fr 1fr) 1fr;
+    gap: 0em 1em;
+    text-indent: 1.5rem;
+    padding: 0;
+    grid-auto-flow: row;
+    justify-content: start;
+    overflow: hidden;
+    grid-area: 5 / 3 / 7 / 13;
+  }
+  
+  .contact { grid-area: 3 / 1 / 5 / 2; }
+  
+  .textarea1 { grid-area: 6 / 1 / 9 / 2; }
+  
+  .textarea2 { grid-area: 3 / 2 / 9 / 3; }
+  
+  .CV {  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1em repeat(2, 1em 1fr 1fr) 1fr;
+    gap: 0px 1em;
+    padding: 0;
+    grid-auto-flow: row;
+    justify-content: start;
+    overflow: hidden;
+    grid-area: 7 / 3 / 9 / 13;
+  }
+  
+  .education { grid-area: 3 / 1 / 9 / 2; }
+  
+  .experience {  display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0.5em;
+    grid-auto-flow: row;
+    justify-content: start;
+    overflow: hidden;
+    padding: 0;
+    grid-area: 3 / 2 / 9 / 3;
+  }
+  
+  .experience {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 0px 0em; 
+    padding: 0;
+    grid-area: 3 / 2 / 9 / 3; 
+  }
+  .residencies {
+    grid-area: 1 / 1 / 3 / 3; }
+
+  .work { grid-area: 1 / 3 / 4 / 4; }
+  

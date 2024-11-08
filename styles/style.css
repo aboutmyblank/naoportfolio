@@ -1,191 +1,397 @@
 :root {
-    --clr-body: #000000;
-    --clr-titles: #000000 ;
-    --size-body: 0.8rem ;
-    --size-titles: 1rem ;
+	--clr-body: #000000;
+	--clr-titles: #000000;
+	--size-body: 0.88rem;
+	--size-titles: 0.9rem;
 }
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
-
 
 
 * {
-    margin: 0;
-    line-height:calc(1em+0.5rem);
+	margin: 0;
+	line-height: calc(1em+0.5rem);
 }
 
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
+	cursor: url('../img/s-crosshair.cur')18 18, cell;
+
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: var(--size-body);
+
+}
+
+.education,
+.experience,
+.residencies,
+.work,
+.featured {
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: var(--size-body);
+	overflow: hidden;
+	padding: 10px;
+	box-sizing: border-box;
+
 }
 
 .contact,
 .textarea1,
-.textarea2,
-.education,
-.bio,
-.CV,
-.experience,
-.residencies,
-.work {
-  width: 100%;
-  height: 100%;
-  font-family: 'Neureal-Mono';
-  font-size: var(--size-body);
-  overflow: auto; /* Allow scroll if content exceeds */
-  padding: 10px;
-  box-sizing: border-box; /* Consistent sizing */
+.textarea2 {
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5rem;
+	text-indent: 2rem;
+	overflow: hidden;
+	padding: 10px;
+	box-sizing: border-box;
+
 }
+
 
 img,
 picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
-    user-select: none;
+	display: block;
+	max-width: 100%;
+	user-select: none;
+
 }
 
-/*NAVBAR*/
+/* NAVBAR */
 
 .name {
-  font-size: var(--size-body);
-    padding-top: 20px;
-    text-align: center;
+	font-size: var(--size-body);
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 20px;
+	text-align: center;
+
 }
+
 .navbar ul {
-  font-size: var(--size-body);
-  list-style: none; /* Remove bullet points */
-    padding: 10px;
-    margin: 0;
-    display: flex; /* Align items in line */
-    gap: 10px; /* Add space between items */
+	font-size: var(--size-body);
+	font-family: Arial, Helvetica, sans-serif;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+	display: flex;
+	gap: 10px;
+	/* Add space between items */
+
 }
+
 .socials ul {
-  font-size: var(--size-body);
-    list-style: none; /* Remove bullet points */
-    padding: 10px;
-    margin: 0;
-    display: flex; /* Align items in line */
-    gap: 10px; /* Add space between items */
-    margin-top: -10px;
+	font-size: var(--size-body);
+	font-family: Arial, Helvetica, sans-serif;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+	display: flex;
+	gap: 1rem;
+	/* Add space between items */
+	margin-top: -10px;
+
 }
+
 .socials {
-    position: relative;
-    top: -10px; /* Moves the socials section up */
+	position: relative;
+	top: 10px;
+	/* Moves the socials section up */
+
 }
 
 .navbar ul li a,
 .socials ul li a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Use inherited color */
+	text-decoration: none;
+	color: inherit;
+
 }
 
-/* Hide bio and CV sections initially */
-#bio,
-#CV {
-  display: none;
+
+/* Hide the specified sections initially */
+#textarea1,
+#textarea2,
+#contact,
+#education,
+#residencies,
+#work,
+#featured {
+	display: none;
+
 }
 
-/*GRID*/
+  
+/* LINKS */
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1em repeat(10, 1fr);
-    grid-template-rows: repeat(4, 1em) repeat(5, 1fr);
-    gap: 5px 5px;
-    grid-auto-flow: row;
-    justify-content: start;
+.contact a {
+	text-decoration: none;
+	color: inherit;
+
+}
+
+.contact a:hover {
+	text-decoration: underline;
+
+}
+
+.residencies a {
+	text-decoration: none;
+	color: inherit;
+
+}
+
+.residencies a:hover {
+	text-decoration: underline;
+
+}
+
+.featured a {
+	text-decoration: none;
+	color: inherit;
+
+}
+
+.featured a:hover {
+	text-decoration: underline;
+
+}
+
+.work a {
+	text-decoration: none;
+	color: inherit;
+
+}
+
+.work a:hover {
+	text-decoration: underline;
+
+}
+
+/* SELECTION */
+
+::selection {
+	color: gray;
+}
+  
+/* MEDIAS */
+
+/*.projects {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr); 
+	gap: 1em;
+	padding: 0.7em;
+	height: 10em;
+	align-items: center; /* Centers items vertically if there's extra space */
+	/* position: sticky; /* Sticks at a specified scroll position */
+	/*top: 0; /* Starts sticking when it reaches the top of the viewport */
+	/*z-index: 100; /* Ensures it stays on top of other content if needed }*/
+
+
+  .projects {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr); 
+	gap: 1em;
+	padding: 0.7em;
+	height: 10em;
+	align-items: center;
+	position: fixed; /* Fixes the position */
+	top: 760px; /* Adjust this value to where it should stay within the viewport */
+	margin-left: 18.5em;
+	width: initial;
+	z-index: 100; /* Ensures it appears above other content */
+}
+  .projects img {
+	height: 10em;
+	object-fit:initial;
   }
 
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1em repeat(10, 1fr);
-    grid-template-rows: auto; /* Adjust this if rows are too spaced */
-    gap: 5px;
+  /* OVERLAY MEDIA CLONE */
+  
+/* Styles for the overlay clone */
+#image-overlay {
+	display: none; /* Hidden by default */
+	position: fixed;
+	top: 50%; /* Center vertically in the viewport */
+	left: 50%; /* Center horizontally in the viewport */
+	transform: translate(-50%, -50%) scale(1.2);
+	width: 25vw;
+	height: 25vw;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain; /* Ensure the full image is visible */
+	z-index: 1000; /* Make sure it appears above all content */
+	pointer-events: none; /* Prevent any interaction with the overlay */
+	opacity: 0; /* Start with opacity 0 for transition */
+	transition: opacity 0.3s ease; /* Smooth fade-in */
+  }
+  
+  
+/* GRID */
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1em repeat(10, 1fr);
+	grid-template-rows: repeat(4, 1em) repeat(5, 1fr);
+	gap: 5px 1em;
 }
 
-.education,
-.work,
-.residencies
-.experience {
-    margin-top: 0; /* Remove any added space above */
-    padding-top: 0; /* Adjust padding if necessary */
+.name {
+	grid-area: 1 / 1 / 3 / 2;
+}
+
+.navbar {
+	grid-area: 1 / 3 / 2 / 4;
+}
+
+.socials {
+	grid-area: 2 / 3 / 3 / 4;
+}
+
+.education {
+	grid-area: 7 / 3 / 9 / 5;
 }
 
 .residencies {
-  margin-top: -5px; /* Adjust as needed */
-  position: relative;
-  overflow: hidden;
+	grid-area: 7 / 5 / 9 / 7;
 }
 
+.work {
+	grid-area: 7 / 8 / 9 / 10;
+}
 
-  .name { grid-area: 1 / 1 / 3 / 2; }
-  
-  .navbar { grid-area: 1 / 3 / 2 / 4; }
-  
-  .socials { grid-area: 2 / 3 / 3 / 4; }
-  
-  .bio {  display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1em repeat(2, 1em 1fr 1fr) 1fr;
-    gap: 0em 1em;
-    text-indent: 1.5rem;
-    padding: 0;
-    grid-auto-flow: row;
-    justify-content: start;
-    overflow: hidden;
-    grid-area: 5 / 3 / 7 / 13;
-  }
-  
-  .contact { grid-area: 3 / 1 / 5 / 2; }
-  
-  .textarea1 { grid-area: 6 / 1 / 9 / 2; }
-  
-  .textarea2 { grid-area: 3 / 2 / 9 / 3; }
-  
-  .CV {  display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1em repeat(2, 1em 1fr 1fr) 1fr;
-    gap: 0px 1em;
-    padding: 0;
-    grid-auto-flow: row;
-    justify-content: start;
-    overflow: hidden;
-    grid-area: 7 / 3 / 9 / 13;
-  }
-  
-  .education { grid-area: 3 / 1 / 9 / 2; }
-  
-  .experience {  display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 0px 0.5em;
-    grid-auto-flow: row;
-    justify-content: start;
-    overflow: hidden;
-    padding: 0;
-    grid-area: 3 / 2 / 9 / 3;
-  }
-  
-  .experience {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(3, 1fr); 
-    gap: 0px 0em; 
-    padding: 0;
-    grid-area: 3 / 2 / 9 / 3; 
-  }
-  .residencies {
-    grid-area: 1 / 1 / 3 / 3; }
+.featured {
+	grid-area: 7 / 10 / 9 / 12;
+}
 
-  .work { grid-area: 1 / 3 / 4 / 4; }
+.textarea2 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 0px 0px;
+	grid-area: 5 / 8 / 7 / 13;
+}
+
+.contact {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	gap: 0px 0px;
+	grid-area: 5 / 3 / 6 / 8;
+}
+
+.textarea1 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 0px 0px;
+	grid-area: 6 / 3 / 7 / 8;
+}
+
+.projects {
+	display: grid; 
+	grid-template-columns: repeat(10, 1fr); 
+	grid-template-rows: repeat(2, 1fr); 
+	gap: 0px 1em; 
+	grid-area: 9 / 3 / 10 / 13; 
+  }
+
+/* TEXT BIO IMG */
+
+.textarea1 {
+  position: relative; /* Ensure relative positioning for the clone */
+}
+
+.img {
+  border-radius: 1px;
+  width: 1em;
+  height: var(--size-titles);
+  background: grey;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 2px;
+  position: relative;
+  transition: transform 0.3s ease; /* Smooth transition */
+}
   
+  .one {
+	background-image: url("/img/Snapinsta.app_164411949_1329265487449026_8912077200549290821_n_1080.jpg");
+  }
+  
+  .two {
+	background-image: url("/img/Snapinsta.app_326119178_121508660640176_2751358998827681075_n_1080.jpg");
+	width: 3vw;
+  }
+  
+  .three {
+	background-image: url("/img/Snapinsta.app_326308905_193604566673424_6838676529883721964_n_1080.jpg");
+	width: 2vw;
+  }
+  
+/* TEXT BIO IMG CLONE */
+
+.one:hover::after {
+	content: "";
+	position: absolute;
+	top: -60px; /* Position clone diagonally above */
+	left: 60px; /* Position clone diagonally to the right */
+	width: 18em;
+	height: 18em;
+	background-image: inherit;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*z-index: 10; /* Make sure it appears above other content */
+	transition: transform 0.3s ease;
+  }
+
+  .two:hover::after {
+	content: "";
+	position: absolute;
+	top: -60px; /* Position clone diagonally above */
+	left: 255px; /* Position clone diagonally to the right */
+	width: 18em;
+	height: 18em;
+	background-image: inherit;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*z-index: 10; /* Make sure it appears above other content */
+	transition: transform 0.3s ease;
+  }
+  
+  .three:hover::after {
+	content: "";
+	position: absolute;
+	top: -60px; /* Position clone diagonally above */
+	left: -556px; /* Position clone diagonally to the right */
+	width: 18em; 
+	height: 18em;
+	background-image: inherit;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*z-index: 10; /* Make sure it appears above other content */
+	transition: transform 0.3s ease;
+  }
+  
+  /* TITLES */
+  
+  .titles {
+font-weight: bold;
+  }
